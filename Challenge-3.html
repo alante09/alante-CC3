@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()">Match Names</button>
+        <h3 id="name"></h3>
+        
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+
+        <script>
+
+            function flames(){
+                 var name1=prompt("Insert the first name here: ")
+                var name2=prompt("Insert the second name here: ")
+                document.getElementById("name").innerHTML=name1+' '+"&"+' '+name2;
+                var n1T=name1.trim();
+                var n2T=name2.trim();
+                var n1=n1T.match(/[qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLXCVBNM]/gi).length;
+                var n2=n2T.match(/[qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLXCVBNM]/gi).length;
+                var t=n1+n2;
+                var T=(t%6)-1;
+                switch(t>=1){
+                        case T==0:
+                        document.getElementById("result").innerHTML="Friends";
+                        break;
+
+                        case T==1:
+                        document.getElementById("result").innerHTML="Lovers";
+                        break;
+
+                        case T==2:
+                        document.getElementById("result").innerHTML="Acquaintance";
+                        break;
+
+                        case T==3:
+                        document.getElementById("result").innerHTML="Married";
+                        break;
+
+                        case T==4:
+                        document.getElementById("result").innerHTML="Enemies";
+                        break;
+
+                        case T==5:
+                        document.getElementById("result").innerHTML="Sweetheart";
+                        break;
+
+                }
+                        
+                }
+        </script>
+    </body>
+</html>
